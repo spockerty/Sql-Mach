@@ -1,0 +1,113 @@
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe.config
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\bin\Debug\Gradingsys.pdb
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Properties.Resources.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.exe
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmMenu.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmTeachers.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Students.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewStud.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmInput.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewTeacher.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Subject.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewSubject.resources
+C:\Users\BAY-AN\Documents\Visual Studio 2010\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Login.resources
+E:\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe.config
+E:\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.exe
+E:\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe.config
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.exe
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.pdb
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Login.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Properties.Resources.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.csproj.GenerateResource.Cache
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.csprojResolveAssemblyReference.cache
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.TeacherAddUpdate.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.TeacherInputGrade.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe.config
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.exe
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.exe
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\bin\Debug\Gradingsys.pdb
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.csprojResolveAssemblyReference.cache
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.StudentAddUpdate.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.TeacherInputGrade.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Login.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmInput.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmMenu.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.frmTeachers.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Grades.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Properties.Resources.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Students.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Subject.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.TeacherAddUpdate.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewStud.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewSubject.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.ViewTeacher.resources
+C:\Users\acer\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.csproj.GenerateResource.Cache
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.StudentAddUpdate.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.SubjectAddUpdate.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.StudentList.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.Dashboard.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.TeacherList.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.SubjectList.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.GradeInput.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.StudentProfile.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.StudentLogin.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.GradesFailList.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.GradesPassList.resources
+C:\Users\Vincent\Desktop\Gradingsys\Gradingsys\obj\x86\Debug\Gradingsys.GradesList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\bin\Debug\Gradingsys.exe.config
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.exe
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\bin\Debug\Gradingsys.exe
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\bin\Debug\Gradingsys.pdb
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.csprojResolveAssemblyReference.cache
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesFailList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesPassList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradeInput.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentLogin.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentProfile.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.SubjectAddUpdate.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.SubjectList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherAddUpdate.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentList.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Dashboard.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentAddUpdate.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherInputGrade.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Login.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Properties.Resources.resources
+C:\Users\Vincent\Desktop\THESIS\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.csproj.GenerateResource.Cache
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\bin\Debug\Gradingsys.exe.config
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\bin\Debug\Gradingsys.exe
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\bin\Debug\Gradingsys.pdb
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.csprojResolveAssemblyReference.cache
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesFailList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradesPassList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.GradeInput.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentLogin.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentProfile.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.SubjectAddUpdate.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.SubjectList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherAddUpdate.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentList.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Dashboard.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.StudentAddUpdate.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherInputGrade.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Login.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.Properties.Resources.resources
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.csproj.GenerateResource.Cache
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.csproj.CoreCompileInputs.cache
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.exe
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.pdb
+C:\Users\spneu\Desktop\GradingSys_proj\new\Grading System\Gradingsys\obj\x86\Debug\Gradingsys.TeacherNewSubjectAdd.resources
