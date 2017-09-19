@@ -62,55 +62,78 @@ namespace Gradingsys
                 MessageBox.Show("Please indicate First Name");
                 txtStudentID.Focus();
             }
-            else if (string.IsNullOrWhiteSpace(txtFirstName.Text) ) 
-              
+            else if (string.IsNullOrWhiteSpace(txtFirstName.Text))
+
             {
-                MessageBox.Show( "Please indicate First Name");
+                MessageBox.Show("Please indicate First Name");
                 txtFirstName.Focus();
             }
             else if (string.IsNullOrWhiteSpace(txtMiddleName.Text))
             {
-                MessageBox.Show( "Please indicate Middle Name");
+                MessageBox.Show("Please indicate Middle Name");
                 txtMiddleName.Focus();
             }
             else if (string.IsNullOrWhiteSpace(txtLastName.Text))
             {
-                MessageBox.Show( "Please indicate Last Name");
+                MessageBox.Show("Please indicate Last Name");
                 txtLastName.Focus();
             }
             else if (string.IsNullOrWhiteSpace(txtParentName.Text))
             {
-                MessageBox.Show( "Please indicate Parent Name");
+                MessageBox.Show("Please indicate Parent Name");
                 txtParentName.Focus();
             }
             else if (string.IsNullOrWhiteSpace(cboGender.Text))
             {
-                MessageBox.Show( "Please indicate Gender");
+                MessageBox.Show("Please indicate Gender");
                 cboGender.Focus();
             }
             else if (string.IsNullOrWhiteSpace(txtAddress.Text))
             {
-                MessageBox.Show( "Please indicate Address");
+                MessageBox.Show("Please indicate Address");
                 txtAddress.Focus();
             }
             else if (string.IsNullOrWhiteSpace(cboYear.Text))
             {
-                MessageBox.Show( "Please indicate Year");
+                MessageBox.Show("Please indicate Year");
                 cboYear.Focus();
             }
             else if (string.IsNullOrWhiteSpace(cboSection.Text))
             {
-                MessageBox.Show( "Please indicate Section");
+                MessageBox.Show("Please indicate Section");
                 cboSection.Focus();
             }
             else if (string.IsNullOrWhiteSpace(txtContactNo.Text))
             {
-                MessageBox.Show( "Please indicate Contact Number");
+                MessageBox.Show("Please indicate Contact Number");
                 txtContactNo.Focus();
             }
+            else if (Command == "Update Student")
+            {
+                //@kuroNeko UPDATE...
+                string updateQuery =
+                            " UPDATE " +
+                            "       StudentInformationTable " +
+                            " SET " +
+                            "       StudentID = '" + txtStudentID.Text + "'" +
+                            "       ,FirstName = '" + txtFirstName.Text + "'" +
+                            "       ,MiddleName = '" + txtMiddleName.Text + "'" +
+                            "       ,LastName = '" + txtLastName.Text + "'" +
+                            "       ,Gender = '" + cboGender.SelectedItem.ToString() + "'" +
+                            "       ,Address = '" + txtAddress.Text + "'" +
+                            "       ,ParentName = '" + txtParentName.Text + "'" +
+                            "       ,ContactNo = '" + txtContactNo.Text + "'" +
+                            "       ,Year = '" + cboYear.SelectedItem.ToString() + "'" +
+                            "       ,Section = '" + cboSection.SelectedItem.ToString() + "'" +
+                            " WHERE " +
+                            "       StudentID = '" + txtStudentID.Text + "'";
 
+                db.ExecuteQuery(updateQuery);
 
-
+                MessageBox.Show("Student Successfully Updated!");
+                StudentListForm.LoadStudentList();
+                Close();
+            }
             else
             {
                 string DeleteQuery = "DELETE FROM StudentInformationTable WHERE StudentID = '" + txtStudentID.Text + "'";
@@ -150,11 +173,6 @@ namespace Gradingsys
                 StudentListForm.LoadStudentList();
                 Close();
             }
-        }
-
-        private void txtFirstName_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

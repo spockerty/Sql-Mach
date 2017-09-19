@@ -14,12 +14,15 @@ namespace Gradingsys
     {
         private string _teacherId;
         private string _teacherName;
+        private string _subjectID;
         private string _username;
         private string _password;
         public DataGridViewRow dataRow;
 
         SqlConnection cn = new SqlConnection(Properties.Settings.Default.Connection);
         DataHelper db = new DataHelper();
+
+        public Dictionary<string, string> subIDName= new Dictionary<string, string>();
 
         public TeacherNewSubjectAdd()
         {
@@ -28,10 +31,11 @@ namespace Gradingsys
 
         private void TeacherNewSubjectAdd_Load(object sender, EventArgs e)
         {
-            this._teacherId = dataRow.Cells[0].Value.ToString();
-            this._teacherName = dataRow.Cells[1].Value.ToString();
-            this._username = dataRow.Cells[3].Value.ToString();
-            this._password = dataRow.Cells[4].Value.ToString();
+            this._teacherId = dataRow.Cells["TeacherID"].Value.ToString();
+            this._teacherName = dataRow.Cells["FullName"].Value.ToString();
+            this._subjectID = dataRow.Cells["SubjectID"].Value.ToString();
+            this._username = dataRow.Cells["UserName"].Value.ToString();
+            this._password = dataRow.Cells["Password"].Value.ToString();
 
             this.txtTeacherID.Text = this._teacherId;
             this.txtTeacherName.Text = this._teacherName;
@@ -50,7 +54,7 @@ namespace Gradingsys
                 "       ,sub.SubjectName " +
                 "       ,sub.Year " +
                 " FROM " +
-                "       TeachersTable A " +
+                "       TeacherSubjectsTable A " +
                 " LEFT JOIN " +
                 "       SubjectsTable sub " +
                 " ON " +
@@ -78,7 +82,7 @@ namespace Gradingsys
                 "           ( SELECT " +
                 "                   subjectId" +
                 "             FROM " +
-                "                   TeachersTable t2" +
+                "                   TeacherSubjectsTable t2" +
                 "             WHERE " +
                 "                   t1.subjectId = t2.subjectID " +
                 "           ) " +
@@ -88,38 +92,39 @@ namespace Gradingsys
 
             DataTable dt = db.ExecuteQuery(showAvailSubQuery);
             
-
             if (dt.Rows.Count > 0)
             {
                 cboSubject.Items.Clear();
+                subIDName.Clear();
 
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    cboSubject.Items.Add(dt.Rows[i][1].ToString());
+                    cboSubject.Items.Add(dt.Rows[i]["SubjectName"].ToString());
+                    subIDName.Add(
+                        dt.Rows[i]["SubjectName"].ToString()
+                        ,dt.Rows[i]["SubjectId"].ToString());
                 }
             }
+
+            cboSubject.Enabled = (dt.Rows.Count > 0);
         }
 
         private void AddNewSubject()
         {
+            MessageBox.Show(this._teacherId);
+            MessageBox.Show(subIDName[cboSubject.SelectedItem.ToString()].ToString());
 
-            string showAvailSubQuery =
+            string Query =             
                " INSERT INTO " +
-               "        teachersTable " +
-               "        (  " +
-               "            TeacherID" +
-               "            ,FirstName" +
-               "            ,LastName" +
-               "            ,SubjectID" +
-               "            ,UserName" +
-               "            ,Password" +
-               "        )" +
+               "        TeacherSubjectsTable " +
                " VALUES " +
-               "        (" +
-               "         ";
+               "        ( " +
+               "            '" + this._teacherId + "'" +
+               "            ,'" + subIDName[cboSubject.SelectedItem.ToString()].ToString() + "'" +
+               "        )";
     
+            DataTable dt = db.ExecuteQuery(Query);
 
-            DataTable dt = db.ExecuteQuery(showAvailSubQuery);
         }
 
         private void cboSubject_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,9 +134,9 @@ namespace Gradingsys
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
-
+            AddNewSubject();
+            ShowCurrentSubjects();
+            ShowAvailSubjects();
         }
-
-
     }
 }

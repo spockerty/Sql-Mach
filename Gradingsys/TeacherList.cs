@@ -46,24 +46,42 @@ namespace Gradingsys
 
         public void LoadTeacherList()
         {
-            string Query = "SELECT A.TeacherID, " +
-                               "(A.FirstName + ' ' + A.LastName) AS 'FullName', " +
-                               "B.SubjectName, " +
-                               "A.Username, " +
-                               "A.Password " +
-                           "FROM TeachersTable A " +
-                           "LEFT JOIN SubjectsTable B " +
-                           "ON B.SubjectID = A.SubjectID " +
-                           "WHERE A.FirstName LIKE '%" + textBox1.Text + "%' " +
-                           "OR A.LastName LIKE '%" + textBox1.Text + "%' " +
-                           "OR (A.FirstName + ' ' + A.LastName) LIKE '%" + textBox1.Text + "%' " +
-                           "OR (A.LastName + ' ' + A.FirstName) LIKE '%" + textBox1.Text + "%' " +
-                           "OR B.SubjectName LIKE '%" + textBox1.Text + "%' " +
-                           "ORDER BY A.LastName ASC";
+            string _Query =
+                         " SELECT " +
+                         "      A.TeacherID " +
+                         "      ,(C.FirstName + ' ' + C.LastName) as 'FullName' " +
+                         "      ,A.SubjectID" + //Only needed, if you really need to sort by Last Name
+                         "      ,B.SubjectName" +
+                         "      ,C.UserName " +
+                         "      ,C.PassWord " +
+                         " FROM " +
+                         "      TeacherSubjectsTable A " +
+                         " LEFT JOIN " +
+                         "      SubjectsTable B " +
+                         " ON " +
+                         "      A.SubjectID = B.SubjectID " +
+                         " LEFT JOIN " +
+                         "      TeachersTable C " +
+                         " ON " +
+                         "      A.TeacherId = C.TeacherID " +
+                         "          WHERE " +
+                         "              C.FirstName LIKE '%" + textBox1.Text + "%' " +
+                         "          OR" +
+                         "              C.LastName LIKE '%" + textBox1.Text + "%' " +
+                         "          OR " +
+                         "              (C.FirstName + ' ' + C.LastName) LIKE '%" + textBox1.Text + "%' " +
+                         "          OR " +
+                         "              (C.FirstName + ' ' + C.LastName) LIKE '%" + textBox1.Text + "%' " +
+                         "          OR " +
+                         "              B.SubjectName LIKE '%" + textBox1.Text + "%' " +
+                         " ORDER BY " +
+                         "      C.LastName " +
+                         " ASC";
 
-            DataTable dt = db.ExecuteQuery(Query);
+            DataTable dt = db.ExecuteQuery(_Query);
 
             dataGridView1.DataSource = dt;
+            //dataGridView1.Columns["SubjectID"].Visible = true;
 
             dataGridView1.ClearSelection();
         }
@@ -86,8 +104,10 @@ namespace Gradingsys
             TeacherAddUpdate TeacherAddUpdateForm = new TeacherAddUpdate();
             TeacherAddUpdateForm.Command = "Update Teacher";
             TeacherAddUpdateForm.TeacherListForm = this;
+            //TeacherAddUpdateForm.dataRow = dataGridView1.Rows[dataGridView1.CurrentRow.Index];
             TeacherAddUpdateForm.TeacherID = dataGridView1.SelectedRows[0].Cells["TeacherID"].Value.ToString();
-            TeacherAddUpdateForm.SubjectDet = dataGridView1.SelectedRows[0].Cells["SubjectName"].Value.ToString();
+            TeacherAddUpdateForm.SubjectID = dataGridView1.SelectedRows[0].Cells["SubjectID"].Value.ToString(); //@kuroNeko Access data of hidden column
+            TeacherAddUpdateForm.SubjectName = dataGridView1.SelectedRows[0].Cells["SubjectName"].Value.ToString();
 
             ////@kuroNeko
             //dgvCell = dataGridView1.CurrentCell;
@@ -102,7 +122,13 @@ namespace Gradingsys
 
             if (result == DialogResult.Yes)
             {
-                string Query = "DELETE FROM TeachersTable WHERE TeacherID = " + dataGridView1.SelectedRows[0].Cells["TeacherID"].Value.ToString();
+                string Query = "DELETE " +
+                               "FROM " +
+                               "        TeacherSubjectsTable " +
+                               " WHERE " +
+                               "        TeacherID = " + dataGridView1.SelectedRows[0].Cells["TeacherID"].Value.ToString() +
+                               " AND" +
+                               "        SubjectId = " + dataGridView1.SelectedRows[0].Cells["SubjectID"].Value.ToString();
 
                 db.ExecuteQuery(Query);
 

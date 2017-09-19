@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TeacherList));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
             this.addNewSubBtn = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -43,6 +38,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.TeacherID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubjectName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Username = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Password = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -56,6 +57,7 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.TeacherID,
             this.FullName,
+            this.SubjectID,
             this.SubjectName,
             this.Username,
             this.Password});
@@ -69,41 +71,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(503, 263);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // TeacherID
-            // 
-            this.TeacherID.DataPropertyName = "TeacherID";
-            this.TeacherID.HeaderText = "Teacher ID";
-            this.TeacherID.Name = "TeacherID";
-            this.TeacherID.ReadOnly = true;
-            // 
-            // FullName
-            // 
-            this.FullName.DataPropertyName = "FullName";
-            this.FullName.HeaderText = "Name";
-            this.FullName.Name = "FullName";
-            this.FullName.ReadOnly = true;
-            // 
-            // SubjectName
-            // 
-            this.SubjectName.DataPropertyName = "SubjectName";
-            this.SubjectName.HeaderText = "Subject";
-            this.SubjectName.Name = "SubjectName";
-            this.SubjectName.ReadOnly = true;
-            // 
-            // Username
-            // 
-            this.Username.DataPropertyName = "Username";
-            this.Username.HeaderText = "Username";
-            this.Username.Name = "Username";
-            this.Username.ReadOnly = true;
-            // 
-            // Password
-            // 
-            this.Password.DataPropertyName = "Password";
-            this.Password.HeaderText = "Password";
-            this.Password.Name = "Password";
-            this.Password.ReadOnly = true;
             // 
             // panel1
             // 
@@ -192,6 +159,48 @@
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
+            // TeacherID
+            // 
+            this.TeacherID.DataPropertyName = "TeacherID";
+            this.TeacherID.HeaderText = "Teacher ID";
+            this.TeacherID.Name = "TeacherID";
+            this.TeacherID.ReadOnly = true;
+            // 
+            // FullName
+            // 
+            this.FullName.DataPropertyName = "FullName";
+            this.FullName.HeaderText = "Name";
+            this.FullName.Name = "FullName";
+            this.FullName.ReadOnly = true;
+            // 
+            // SubjectID
+            // 
+            this.SubjectID.DataPropertyName = "SubjectID";
+            this.SubjectID.HeaderText = "SubjectID";
+            this.SubjectID.Name = "SubjectID";
+            this.SubjectID.ReadOnly = true;
+            // 
+            // SubjectName
+            // 
+            this.SubjectName.DataPropertyName = "SubjectName";
+            this.SubjectName.HeaderText = "Subject";
+            this.SubjectName.Name = "SubjectName";
+            this.SubjectName.ReadOnly = true;
+            // 
+            // Username
+            // 
+            this.Username.DataPropertyName = "Username";
+            this.Username.HeaderText = "Username";
+            this.Username.Name = "Username";
+            this.Username.ReadOnly = true;
+            // 
+            // Password
+            // 
+            this.Password.DataPropertyName = "Password";
+            this.Password.HeaderText = "Password";
+            this.Password.Name = "Password";
+            this.Password.ReadOnly = true;
+            // 
             // TeacherList
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -228,11 +237,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button addNewSubBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn TeacherID;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubjectID;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubjectName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Username;
         private System.Windows.Forms.DataGridViewTextBoxColumn Password;
-        private System.Windows.Forms.Button addNewSubBtn;
     }
 }

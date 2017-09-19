@@ -17,7 +17,9 @@ namespace Gradingsys
         public TeacherList TeacherListForm;
         public string Command = "Add Teacher";
         public string TeacherID = string.Empty;
-        public string SubjectDet = string.Empty;
+        public string SubjectID = string.Empty;
+        public string SubjectName = string.Empty;
+
 
         List<string> SubjectIDs = new List<string>();
 
@@ -28,12 +30,16 @@ namespace Gradingsys
 
         private void TeacherAddUpdate_Load(object sender, EventArgs e)
         {
-           // LoadSubjects();
+
             txtTeacherID.Text = "Auto Generated";
             if (Command == "Update Teacher")
             {
-                LoadSubjects(true);
+                LoadSubjects(true); //@kuroNeko, added
                 LoadTeacherInformation();
+            }
+            else
+            {
+                LoadSubjects(false); //@kuroNeko, added
             }
         }
 
@@ -72,12 +78,13 @@ namespace Gradingsys
                 txtUsername.Text = dt.Rows[0]["Username"].ToString();
                 txtPassword.Text = dt.Rows[0]["Password"].ToString();
                 txtTeacherID.Enabled = false;
-                
+
             }
         }
 
         private void LoadSubjects(bool isUpdate)
         {
+            //@kuroNeko Select subjects that have no teachers assigned to it yet.
             string showAvailSubQuery =
                   " SELECT  " +
                   "       subjectId" +
@@ -85,10 +92,11 @@ namespace Gradingsys
                   " FROM " +
                   "       SubjectsTable t1 " +
                   " WHERE NOT EXISTS" +
-                  "           ( SELECT " +
+                  "           ( " +
+                  "             SELECT " +
                   "                   subjectId" +
                   "             FROM " +
-                  "                   TeachersTable t2" +
+                  "                   TeacherSubjectsTable t2" +
                   "             WHERE " +
                   "                   t1.subjectId = t2.subjectID " +
                   "           ) " +
@@ -96,40 +104,54 @@ namespace Gradingsys
                   "        subjectName " +
                   " ASC ";
 
-            if (isUpdate)
-            {
-                showAvailSubQuery = "SELECT * " +
-                         "FROM SubjectsTable " +
-                         "ORDER BY SubjectName ASC";
-
-            }
+            //string showAvailSubQuery =
+            //      " SELECT  " +
+            //      "       subjectId" +
+            //      "       ,subjectName " +
+            //      " FROM " +
+            //      "       SubjectsTable t1 " +
+            //      " WHERE NOT EXISTS" +
+            //      "           ( " +
+            //      "             SELECT " +
+            //      "                   subjectId" +
+            //      "             FROM " +
+            //      "                   TeachersTable t2" +
+            //      "             WHERE " +
+            //      "                   t1.subjectId = t2.subjectID " +
+            //      "           ) " +
+            //      " ORDER BY " +
+            //      "        subjectName " +
+            //      " ASC ";
 
             DataTable dt = db.ExecuteQuery(showAvailSubQuery);
 
+            cboSubject.Items.Clear();
+            SubjectIDs.Clear();
+
+            //@kuroNeko Add Teacher's current Subject on the drop down list
+            if (isUpdate)
+            {
+                SubjectIDs.Add(SubjectID);
+                cboSubject.Items.Add(SubjectName);
+                cboSubject.SelectedIndex = 0;
+            }
+
+            //@kuroNeko This one add subjects that have no assigned teachers yet
+            //          Code below didnt change, only the SQL query.
             if (dt.Rows.Count > 0)
             {
-                cboSubject.Items.Clear();
-                SubjectIDs.Clear();
-
                 for (int i = 0; i < dt.Rows.Count; i++)
                 {
                     cboSubject.Items.Add(dt.Rows[i]["SubjectName"].ToString());
                     SubjectIDs.Add(dt.Rows[i]["SubjectID"].ToString());
                 }
             }
-            //else
-            //{
-            //    //@kuroNeko
-            //    cboSubject.Items.Add(SubjectDet);
-            //    cboSubject.SelectedIndex = 0;
-            //    MessageBox.Show("All SUBJECTS are filled." + SubjectDet);
-            //}
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string Query = string.Empty;
-            
+
             if (Command == "Add Teacher")
             {
                 Query = "SELECT * FROM TeachersTable WHERE SubjectID = " + SubjectIDs[cboSubject.SelectedIndex];
@@ -145,7 +167,11 @@ namespace Gradingsys
                                 " " + SubjectIDs[cboSubject.SelectedIndex] + " , " +
                                 "'" + txtUsername.Text + "', " +
                                 "'" + txtPassword.Text + "')";
+
                     db.ExecuteQuery(Query);
+
+                    //Add TeacherID and SubjectID to new TeacherSubjectsTable
+                    AddTeacherToTSTable();
 
                     string InsertGradesQuery = "INSERT INTO GradesTable " +
                                                "SELECT A.StudentID, " +
@@ -172,13 +198,36 @@ namespace Gradingsys
             }
             else if (Command == "Update Teacher")
             {
-                Query = "UPDATE TeachersTable " +
-                        "SET FirstName = '" + txtFirstName.Text + "', " +
-                            "LastName = '" + txtLastName.Text + "', " +
-                            "SubjectID = " + SubjectIDs[cboSubject.SelectedIndex] + ", " +
-                            "Username = '" + txtUsername.Text + "', " +
-                            "Password = '" + txtPassword.Text + "' " +
-                        "WHERE TeacherID = " + TeacherID;
+                Query = " UPDATE TeachersTable " +
+                    " SET FirstName = '" + txtFirstName.Text + "', " +
+                        "LastName = '" + txtLastName.Text + "', " +
+                        "SubjectID = " + SubjectIDs[cboSubject.SelectedIndex] + ", " +
+                        "Username = '" + txtUsername.Text + "', " +
+                        "Password = '" + txtPassword.Text + "' " +
+                    " WHERE TeacherID = " + TeacherID;
+
+                db.ExecuteQuery(Query);
+
+                Query =
+                        " DELETE FROM " +
+                        "       TeacherSubjectsTable " +
+                        " WHERE " +
+                        "       TeacherId = " + TeacherID +
+                        " AND " +
+                        "       SubjectId = " + SubjectID;
+
+                db.ExecuteQuery(Query);
+
+                Query =
+                    " INSERT INTO " +
+                    "       TeacherSubjectsTable" +
+                    "       (" +
+                    "           SubjectId" +
+                    "           ,TeacherId" +
+                    "       )" +
+                    " VALUES " +
+                    "       ( " + SubjectIDs[cboSubject.SelectedIndex] + ","  +  TeacherID + ")";
+
                 db.ExecuteQuery(Query);
 
                 MessageBox.Show("Teacher Successfully Updated!");
@@ -188,6 +237,45 @@ namespace Gradingsys
             }
         }
 
+        /// <summary>
+        /// Add record to New TeacherSubjectsTable
+        /// @kuroNeko
+        /// </summary>
+        private void AddTeacherToTSTable()
+        {
+            string Query =
+                    " INSERT INTO " +
+                    "       TeacherSubjectsTable" +
+                    " VALUES " +
+                    "       ( " +
+                    "           '" + this.TeacherID + "'" +
+                    "           ,'" + SubjectIDs[cboSubject.SelectedIndex] + "'" +
+                    "       ) ";
+
+            string _Query =
+                    "INSERT " +
+                    "       teachersubjectstable " +
+                    "           ( " +
+                    "               teacherId " +
+                    "               ,subjectId " +
+                    "           )" +
+                    " SELECT " +
+                    "       teacherId " +
+                    "       ,subjectId " +
+                    " FROM " +
+                    "       teacherstable B " +
+                    " WHERE NOT EXISTS " +
+                    "       ( " +
+                    "           SELECT " +
+                    "               teacherId " +
+                    "           FROM" +
+                    "               teachersubjectstable A " +
+                    "           WHERE " +
+                    "               A.teacherId  = B.teacherId " +
+                    "       ) ";
+
+            db.ExecuteQuery(_Query);
+        }
         ///// <summary>
         ///// [Edit by: Kuroneko]
         ///// </summary>

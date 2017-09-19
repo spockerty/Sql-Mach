@@ -25,9 +25,7 @@ namespace Gradingsys
         private void TeacherAddUpdate_Load(object sender, EventArgs e)
         {
             LoadStudentList();
-
-           
-
+            LoadCurrentSubject();
         }
 
         public void LoadStudentList()
@@ -45,8 +43,9 @@ namespace Gradingsys
                                "(CASE WHEN A.Final < 75 THEN 'Fail' ELSE 'Pass' END) AS 'Remarks' " + 
                            "FROM GradesTable A " + 
                            "LEFT JOIN StudentInformationTable B " + 
-                           "ON B.StudentID = A.StudentID " + 
-                           "LEFT JOIN TeachersTable C " + 
+                           "ON B.StudentID = A.StudentID " +
+                      //     "LEFT JOIN TeachersTable C " +  @kuroNeko
+                           "LEFT JOIN TeacherSubjectsTable C " +
                            "ON C.TeacherID = A.TeacherID " + 
                            "LEFT JOIN SubjectsTable D " +
                            "ON D.SubjectID = C.SubjectID " + 
@@ -56,7 +55,18 @@ namespace Gradingsys
                            "OR (B.FirstName + ' ' + B.LastName) LIKE '%" + textBox1.Text + "%' " +
                            "OR (B.LastName + ' ' + B.FirstName) LIKE '%" + textBox1.Text + "%' " +
                            "OR D.SubjectName LIKE '%" + textBox1.Text + "%') " +
-                           "ORDER BY B.LastName ASC";
+                           "GROUP BY " +
+                           "D.SubjectName, A.StudentID, " + 
+                               "B.LastName,B.FirstName, B.MiddleName, " +
+                               "B.Year, " +
+                               "B.Section, " +
+                               " " +
+                               "A.First, " +
+                               "A.Second, " +
+                               "A.Third, " +
+                               "A.Fourth, " +
+                               "A.Final" +
+                           " ORDER BY B.LastName ASC";
 
             DataTable dt = db.ExecuteQuery(Query);
 
@@ -70,6 +80,39 @@ namespace Gradingsys
             txtSecond.Clear();
             txtThird.Clear();
             txtFourth.Clear();
+        }
+
+        private void LoadCurrentSubject()
+        {
+            String Query =
+                 " SELECT " +
+                "       A.SubjectID " +
+                "       ,sub.SubjectName " +
+                "       ,sub.Year " +
+                " FROM " +
+                "       TeacherSubjectsTable A " +
+                " LEFT JOIN " +
+                "       SubjectsTable sub " +
+                " ON " +
+                "       A.SubjectId = sub.SubjectId " +
+                " WHERE " +
+                "       A.TeacherID  = '" + TEACHERID + "'";
+
+            Console.WriteLine(TEACHERID);
+
+            DataTable dt = db.ExecuteQuery(Query);
+
+            if (dt.Rows.Count > 0)
+            {
+                cboSubject.Items.Clear();
+
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    cboSubject.Items.Add(dt.Rows[i]["SubjectName"].ToString());
+                }
+            }
+
+
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -205,6 +248,11 @@ namespace Gradingsys
            printPreviewDialog1.ShowDialog();
        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void GradesPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }
