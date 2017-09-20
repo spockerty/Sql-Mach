@@ -78,7 +78,7 @@ namespace Gradingsys
                 txtSubjectID.Focus();
 
             }
-        else  if (string.IsNullOrWhiteSpace(txtSubjectName.Text))
+            else if (string.IsNullOrWhiteSpace(txtSubjectName.Text))
             {
                 MessageBox.Show("Please indicate First Name");
                 txtSubjectName.Focus();
@@ -90,8 +90,8 @@ namespace Gradingsys
                 cboYear.Focus();
 
             }
-             else if (Command == "Add Subject")
-                {
+            else if (Command == "Add Subject")
+            {
                 Query = "SELECT * FROM SubjectsTable WHERE SubjectName = '" + txtSubjectName.Text + "'";
                 if (db.ExecuteQuery(Query).Rows.Count > 0)
                 {
@@ -114,7 +114,7 @@ namespace Gradingsys
             {
                 Query = "UPDATE SubjectsTable " +
                         "SET SubjectName = '" + txtSubjectName.Text + "', " +
-                            "Year = '" + cboYear.SelectedItem.ToString() + "' " + 
+                            "Year = '" + cboYear.SelectedItem.ToString() + "' " +
                         "WHERE SubjectID = " + SubjectID;
                 db.ExecuteQuery(Query);
                 MessageBox.Show("Subject Successfully Updated!");
